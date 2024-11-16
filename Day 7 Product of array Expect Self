@@ -1,0 +1,12 @@
+class Solution(object):
+    def productExceptSelf(self, a):
+        res =[1]*len(a)
+        prefix = 1
+        for i in range(len(a)):
+            res[i] = prefix
+            prefix*=a[i]
+        suffix = 1
+        for i in range(len(a)-1,-1,-1):
+            res[i]*=suffix
+            suffix*=a[i]
+        return(res)
