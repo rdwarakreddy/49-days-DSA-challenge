@@ -1,0 +1,7 @@
+class Solution(object):
+    def majorityElement(self, a):
+        b = int(len(a) / 2)
+        c = Counter(a)
+        for key, value in c.items():
+            if value > b:
+                return(key)
